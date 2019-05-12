@@ -114,11 +114,11 @@ public class AsciiLevelLoader : MonoBehaviour
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/roads/road_intersection"));
                         tile.transform.position = new Vector3(x - line.Length/2f, 0f, inputLines.Length/2f - y);
                         break;
-                    case 'P':
+                    case '-':
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/picket_fence_1"));
                         tile.transform.position = new Vector3(x - line.Length/2f, 0f, inputLines.Length/2f - y);
                         break;
-                    case 'p':
+                    case '|':
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/picket_fence_2"));
                         tile.transform.position = new Vector3(x - line.Length/2f, 0f, inputLines.Length/2f - y);
                         break;

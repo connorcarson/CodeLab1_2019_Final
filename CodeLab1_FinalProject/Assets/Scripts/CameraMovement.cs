@@ -32,16 +32,15 @@ public class CameraMovement : MonoBehaviour
 
         myCam.orthographicSize = Mathf.Clamp(myCam.orthographicSize, minZoom, maxZoom);
         
-        print(Input.GetAxis("Mouse ScrollWheel"));
+        Vector3 zoomPos = myCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, myCam.farClipPlane));
+        
+        print(zoomPos);
 
-        /*if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit point = new RaycastHit();
-            Physics.Raycast(ray, out point, 25f);
-            
-            
-            transform.position 
-        }*/
+            //center camera to mouse pos
+            transform.position = Vector3.Lerp(transform.position,
+                new Vector3(zoomPos.x, transform.position.y, zoomPos.z), zoomMultiplier * Time.deltaTime);
+        }
     }
 }

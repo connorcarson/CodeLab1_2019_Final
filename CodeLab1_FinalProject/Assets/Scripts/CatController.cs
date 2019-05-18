@@ -18,10 +18,14 @@ public class CatController : MonoBehaviour
     private float _speed;
 
     private bool _isWaiting;
+
+    private GameObject _player;
     
     // Start is called before the first frame update
     void Start()
     {
+        _player = GameObject.FindWithTag("Player");
+        
         _currentPos = transform.position;
         _newPos = _currentPos;
     }
@@ -29,6 +33,8 @@ public class CatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerLook();
+        
         if (_currentPos == _newPos)
         {
             StartCoroutine(MoveAgent());
@@ -72,8 +78,26 @@ public class CatController : MonoBehaviour
 
         _isWaiting = false;
         _currentPos = transform.position;
+    }
+
+    void PlayerLook()
+    {
+        Vector3 direction = _player.transform.position - transform.position;
+
+        direction.Normalize();
+        
+        Quaternion newQuaternion = Quaternion.LookRotation(direction);
+
+        float dotProduct = Vector3.Dot(direction, transform.forward);
+        float distance = Vector3.Distance(_player.transform.position, transform.position);
         
         
-        
+        Debug.DrawRay(transform.position, direction, Color.red);
+
+
+        if (dotProduct < 0.3f && distance < 1f)
+        {
+            Debug.Log("You're too close to the cat!");
+        }
     }
 }

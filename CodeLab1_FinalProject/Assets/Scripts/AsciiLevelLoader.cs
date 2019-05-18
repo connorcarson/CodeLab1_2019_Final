@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AsciiLevelLoader : MonoBehaviour
 {
-
+    public NavMeshSurface plane;
+    
     public string levelTxtFile;
     
     // Start is called before the first frame update
@@ -128,6 +130,8 @@ public class AsciiLevelLoader : MonoBehaviour
                 }
             }
         }
+        
+        plane.BuildNavMesh();
     }
 
     // Update is called once per frame

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TruckController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public NavMeshAgent agent;
     

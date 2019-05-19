@@ -816,6 +816,8 @@ MonoBehaviour:
   Anim: {fileID: 1094195858}
   wanderRadius: 4
   waitTime: 10
+  defaultSpeed: 0
+  runSpeed: 0
 --- !u!1 &1099268846
 GameObject:
   m_ObjectHideFlags: 0

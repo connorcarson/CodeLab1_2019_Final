@@ -10,6 +10,8 @@ public class AsciiLevelLoader : MonoBehaviour
     public NavMeshSurface plane;
     
     public string levelTxtFile;
+
+    public Transform environment;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class AsciiLevelLoader : MonoBehaviour
             for (int x = 0; x < line.Length; x++)
             {
                 GameObject tile;
-
+                
                 switch (line[x])
                 {
                     case 'A':

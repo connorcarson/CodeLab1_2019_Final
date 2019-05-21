@@ -10,8 +10,6 @@ public class AsciiLevelLoader : MonoBehaviour
     public NavMeshSurface plane;
     
     public string levelTxtFile;
-
-    public Transform environment;
     
     // Start is called before the first frame update
     void Start()

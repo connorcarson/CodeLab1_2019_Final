@@ -45,11 +45,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            _playerIndicatorRect.sizeDelta = new Vector2(_playerIndicatorRect.sizeDelta.x - 200f * Time.deltaTime, _playerIndicatorRect.sizeDelta.y - 200f * Time.deltaTime);
+            _playerIndicatorRect.sizeDelta = new Vector2(_playerIndicatorRect.sizeDelta.x - 300f * Time.deltaTime, _playerIndicatorRect.sizeDelta.y - 300f * Time.deltaTime);
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            _playerIndicatorRect.sizeDelta = new Vector2(_playerIndicatorRect.sizeDelta.x + 200f * Time.deltaTime, _playerIndicatorRect.sizeDelta.y + 200f * Time.deltaTime);
+            _playerIndicatorRect.sizeDelta = new Vector2(_playerIndicatorRect.sizeDelta.x + 300f * Time.deltaTime, _playerIndicatorRect.sizeDelta.y + 300f * Time.deltaTime);
         }
 
         _playerIndicatorRect.sizeDelta = new Vector2(Mathf.Clamp(_playerIndicatorRect.sizeDelta.x, 100, 300), Mathf.Clamp(_playerIndicatorRect.sizeDelta.y, 100, 300));

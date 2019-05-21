@@ -35,7 +35,7 @@ public class UIEventManager : MonoBehaviour
 
         if (Input.anyKey)
         {
-            if (_readInstructions == false)
+            if (_readInstructions == false && _title.color.a >= 1f)
             {
                 StartCoroutine(FadeTo0Alpha(fadeMultiplier, _title));
                 StartCoroutine(FadeToFullAlpha(fadeMultiplier, _instructions));
